@@ -1,0 +1,18 @@
+[package]
+name = "pep-generator"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+
+[dependencies]
+askama = "0.11.1" # For templating
+chrono = "0.4.22" # For time stuff
+log = "0.4.17" # For teh logz
+rand = "0.8.5" # Random!
+shuttle-aws-rds = { version = "0.7.2", features = ["postgres"] } # For storing data
+shuttle-service = { version = "0.7.2", features = ["web-thruster"] } # For deploying easily
+sqlx = { version = "0.6.2", features = ["runtime-tokio-native-tls", "postgres", "chrono", "uuid"] } # For dealing with postgres
+thruster = { version = "1.3.0", features = ["hyper_server"] } # For http framework stuff
+tokio = { version = "1.20.1", features = ["macros"] } # For an async runtime
